@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Music Player</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+    }
+    li a {
+      text-decoration: none;
+      color: #007BFF;
+      cursor: pointer;
+    }
+    li a:hover {
+      text-decoration: underline;
+    }
+    audio {
+      margin-top: 20px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>My GitHub Music Player</h1>
+  <p>Select a song from the playlist below:</p>
+  
+  <h2>Playlist</h2>
+  <ul>
+    <li><a href="#" onclick="playSong('music/song1.wav')">🎵 Song 1</a></li>
+    <li><a href="#" onclick="playSong('music/song2.wav')">🎵 Song 2</a></li>
+    <li><a href="#" onclick="playSong('music/song3.wav')">🎵 Song 3</a></li>
+  </ul>
+
+  <audio id="audioPlayer" controls>
+    <source src="music/song1.wav" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function playSong(src) {
+      const player = document.getElementById('audioPlayer');
+      player.src = src; // Set the source of the audio player
+      player.play();    // Start playing the selected song
+    }
+  </script>
+</body>
+</html>
